@@ -1,0 +1,68 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, san-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+list-style-type: none;
+}
+
+.grid {
+  width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.grid li {
+  width: 98px;
+  height: 98px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000;
+}
+
+li:hover {
+  background: blue;
+}
+
+.display1 {
+  margin: 0 auto;
+  height: 50px;
+  background: yellow;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  width: 400px;
+  border: 1px solid #000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.display2 {
+  margin: 0 auto;
+  height: 50px;
+  background: lime;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  width: 400px;
+  border: 1px solid #000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  font-family: monospace;
+  font-weight: bold;
+}

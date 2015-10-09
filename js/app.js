@@ -30,24 +30,84 @@ window.onload = function(){
   var squares = document.getElementsByTagName("li");
   var display = document.getElementsByClassName("display")[0];
   var number1 = document.getElementById("number1");
-  var number2 = document.getElementById("number2"); 
+  var number2 = document.getElementById("number2");
+  var operator = document.getElementById("operator");
 
   // getEquation();
 
+  function generateRandomAnswer(correct){
+    var answer; 
+    if (Math.random() > 0.5) {
+      answer = Math.floor(correct - (Math.random()*(correct/Math.random() * 10)));
+    } else {
+      answer = Math.floor(correct + (Math.random()*(correct/Math.random() * 10)));
+    }
+    if (correct === answer) return false;
+    return answer;
+  }
+
   function getEquation(){
-    // num1=document.getElementById("number1");
-    // num2=document.getElementById("number2");   
+    var operators = ['+','-','*','/'];
+
     rnum1 = Math.floor((Math.random()*20)+1);
-    rnum2 = Math.floor((Math.random()*20)+1);
-    number1.innerHTML = rnum1
-    number2.innerHTML = rnum2    
+    rnum2 = Math.floor((Math.random()*10)+1);
+
+    op = operators[Math.floor(Math.random()*4)];
+
+    var res;
+    switch (op) {
+      case '+': res = rnum1 + rnum2; 
+      break;
+      case '-': res = rnum1 - rnum2;
+      break;
+      case '*': res = rnum1 * rnum2;
+      break;
+      case '/': res = rnum1 / rnum2;
+      break;
+    }
+
+    // operators[op]
+    
+    number1.innerHTML = rnum1;
+    number2.innerHTML = rnum2;
+    operator.innerHTML = op;
+    result.innerHTML = res;
+
+
+    var answers = [res];
+    while (answers.length < 3) {
+      var answer = generateRandomAnswer(res)
+      if (answer && answers.indexOf(answer) === -1) {
+        answers.push(answer);
+      }
+    }
+    console.log(answers);
+
+    // Shuffle array
+    // The values to the answer boxes
+    
   }
 
   for (var i = 0; i < squares.length; i++) {
    squares[i].addEventListener("click", getEquation);
   }
 
+  
 
+  // //random operator
+
+  // var opindex = Math.random()*4; //good that your rnum2 cannot be zero
+  // var operator = ops[opindex];
+
+  // //calculate the expected result:
+
+  // var res;
+  // switch (opindex){
+  //   case 0: res=rnum1+rnum2; break;
+  //   case 1: res=rnum1-rnum2; break;
+  //   case 2: res=rnum1*rnum2; break;
+  //   case 3: res=rnum1/rnum2; break;
+  // }
 
 // var numberOne
 // var numberTwo

@@ -33,8 +33,6 @@ window.onload = function(){
   var number2 = document.getElementById("number2");
   var operator = document.getElementById("operator");
 
-  // getEquation();
-
   function generateRandomAnswer(correct){
     var answer; 
     if (Math.random() > 0.5) {
@@ -46,12 +44,18 @@ window.onload = function(){
     return answer;
   }
 
+  function shuffleAnswers(o){
+  
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+  }
+
+
   function getEquation(){
     var operators = ['+','-','*','/'];
 
     rnum1 = Math.floor((Math.random()*20)+1);
     rnum2 = Math.floor((Math.random()*10)+1);
-
     op = operators[Math.floor(Math.random()*4)];
 
     var res;
@@ -65,14 +69,11 @@ window.onload = function(){
       case '/': res = rnum1 / rnum2;
       break;
     }
-
-    // operators[op]
     
     number1.innerHTML = rnum1;
     number2.innerHTML = rnum2;
     operator.innerHTML = op;
     result.innerHTML = res;
-
 
     var answers = [res];
     while (answers.length < 3) {
@@ -82,6 +83,11 @@ window.onload = function(){
       }
     }
     console.log(answers);
+
+    var myArray = answers;
+    shuffleAnswers(myArray);
+
+    console.log(myArray)
 
     // Shuffle array
     // The values to the answer boxes
@@ -94,24 +100,6 @@ window.onload = function(){
 
   
 
-  // //random operator
-
-  // var opindex = Math.random()*4; //good that your rnum2 cannot be zero
-  // var operator = ops[opindex];
-
-  // //calculate the expected result:
-
-  // var res;
-  // switch (opindex){
-  //   case 0: res=rnum1+rnum2; break;
-  //   case 1: res=rnum1-rnum2; break;
-  //   case 2: res=rnum1*rnum2; break;
-  //   case 3: res=rnum1/rnum2; break;
-  // }
-
-// var numberOne
-// var numberTwo
-// var operator
 
 //   $(function(){
 //     $('li').on("click", updateButton);
@@ -124,22 +112,6 @@ window.onload = function(){
 //   function updateButton(){
 //     $('<p>Options</p>').appendTo('#button');
 //   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

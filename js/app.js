@@ -31,7 +31,11 @@ window.onload = function(){
   var display = document.getElementsByClassName("display")[0];
   var number1 = document.getElementById("number1");
   var number2 = document.getElementById("number2");
+  var question = document.getElementById("question");
   var operator = document.getElementById("operator");
+  var answer1 = document.getElementById("answer1");
+  var answer2 = document.getElementById("answer2");
+  var answer3 = document.getElementById("answer3");
 
   function generateRandomAnswer(correct){
     var answer; 
@@ -70,10 +74,11 @@ window.onload = function(){
       break;
     }
     
-    number1.innerHTML = rnum1;
-    number2.innerHTML = rnum2;
-    operator.innerHTML = op;
+    // number1.innerHTML = rnum1;
+    // number2.innerHTML = rnum2;
+    // operator.innerHTML = op;
     result.innerHTML = res;
+    question.innerHTML = "What is " + rnum1 + " " + op + " " + rnum2 + " ?";
 
     var answers = [res];
     while (answers.length < 3) {
@@ -88,6 +93,9 @@ window.onload = function(){
     shuffleAnswers(myArray);
 
     console.log(myArray)
+    answer1.innerHTML = myArray[0]
+    answer2.innerHTML = myArray[1]
+    answer3.innerHTML = myArray[2]
 
     // Shuffle array
     // The values to the answer boxes

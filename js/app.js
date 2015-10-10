@@ -34,6 +34,9 @@ window.onload = function(){
   var answer2 = document.getElementById("answer2");
   var answer3 = document.getElementById("answer3");
   var timer = document.getElementById("timer");
+  var start = document.getElementById("start")
+
+  document.getElementById("start").addEventListener("click", updateTimer);
 
   function generateRandomAnswer(correct){
     var answer; 
@@ -70,6 +73,7 @@ window.onload = function(){
       break;
       case '/': res = rnum1 / rnum2;
       break;
+
     }
     
     result.innerHTML = res;
@@ -95,8 +99,6 @@ window.onload = function(){
   for (var i = 0; i < squares.length; i++) {
    squares[i].addEventListener("click", getEquation);
   }
-
-  updateTimer()
 
   function updateTimer(){
     var counter = 60;

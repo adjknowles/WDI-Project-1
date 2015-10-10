@@ -28,7 +28,7 @@
 window.onload = function(){
 
   var squares = document.getElementsByTagName("li");
-  var display = document.getElementsByClassName("display")[0];
+  var display = document.getElementById("display");
   var question = document.getElementById("question");
   var answer1 = document.getElementById("answer1");
   var answer2 = document.getElementById("answer2");
@@ -56,8 +56,8 @@ window.onload = function(){
   function getEquation(){
     var operators = ['+','-','*','/'];
 
-    rnum1 = Math.floor((Math.random()*20)+1);
-    rnum2 = Math.floor((Math.random()*10)+1);
+    rnum1 = Math.floor((Math.random()*20)+1)
+    rnum2 = Math.floor((Math.random()*10)+1)
     op = operators[Math.floor(Math.random()*4)];
 
     var res;
@@ -86,9 +86,9 @@ window.onload = function(){
     var myArray = answers;
     shuffleAnswers(myArray);
 
-    answer1.innerHTML = myArray[0]
-    answer2.innerHTML = myArray[1]
-    answer3.innerHTML = myArray[2]
+    answer1.innerHTML = parseFloat(myArray[0].toFixed(2))
+    answer2.innerHTML = parseFloat(myArray[1].toFixed(2))
+    answer3.innerHTML = parseFloat(myArray[2].toFixed(2))
     
   }
 
@@ -103,27 +103,15 @@ window.onload = function(){
 
     setInterval(function(){
       counter --;
-      timer.innerHTML = counter;
-    }, 1000);
+      if(counter >= 0){
+        return timer.innerHTML = counter;
+      }else{
+        return display.innerHTML = "GAME OVER!"
+      }
+      }, 1000);
+    }
   }
 
-  // var timer = setInterval(updateTimer, 1000);
-
-  // function stopUpdating(){
-  //   clearInterval(timer);
-  // }
-
-  // setTimeout(stopUpdating, 60000);
-
-  
-
-  // // var time = Date.now();
-  // // var running = setInterval(run, 10); // Save this so we can clear/cancel it later
-
-  // setTimeout(function() {        // Set a timer
-  //   clearInterval(running);      // Stop the running loop
-  //   display.innerHTML = ("Game over!");         // Let the user know, do other stuff here
-  // }, 1000);                     // time in miliseconds before the game ends
 
 
 //   $(function(){
@@ -143,4 +131,3 @@ window.onload = function(){
 
 
 
-}

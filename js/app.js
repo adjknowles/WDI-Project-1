@@ -29,13 +29,11 @@ window.onload = function(){
 
   var squares = document.getElementsByTagName("li");
   var display = document.getElementsByClassName("display")[0];
-  var number1 = document.getElementById("number1");
-  var number2 = document.getElementById("number2");
   var question = document.getElementById("question");
-  var operator = document.getElementById("operator");
   var answer1 = document.getElementById("answer1");
   var answer2 = document.getElementById("answer2");
   var answer3 = document.getElementById("answer3");
+  var timer = document.getElementById("timer");
 
   function generateRandomAnswer(correct){
     var answer; 
@@ -74,9 +72,6 @@ window.onload = function(){
       break;
     }
     
-    // number1.innerHTML = rnum1;
-    // number2.innerHTML = rnum2;
-    // operator.innerHTML = op;
     result.innerHTML = res;
     question.innerHTML = "What is " + rnum1 + " " + op + " " + rnum2 + " ?";
 
@@ -87,18 +82,13 @@ window.onload = function(){
         answers.push(answer);
       }
     }
-    console.log(answers);
 
     var myArray = answers;
     shuffleAnswers(myArray);
 
-    console.log(myArray)
     answer1.innerHTML = myArray[0]
     answer2.innerHTML = myArray[1]
     answer3.innerHTML = myArray[2]
-
-    // Shuffle array
-    // The values to the answer boxes
     
   }
 
@@ -106,7 +96,34 @@ window.onload = function(){
    squares[i].addEventListener("click", getEquation);
   }
 
+  updateTimer()
+
+  function updateTimer(){
+    var counter = 60;
+
+    setInterval(function(){
+      counter --;
+      timer.innerHTML = counter;
+    }, 1000);
+  }
+
+  // var timer = setInterval(updateTimer, 1000);
+
+  // function stopUpdating(){
+  //   clearInterval(timer);
+  // }
+
+  // setTimeout(stopUpdating, 60000);
+
   
+
+  // // var time = Date.now();
+  // // var running = setInterval(run, 10); // Save this so we can clear/cancel it later
+
+  // setTimeout(function() {        // Set a timer
+  //   clearInterval(running);      // Stop the running loop
+  //   display.innerHTML = ("Game over!");         // Let the user know, do other stuff here
+  // }, 1000);                     // time in miliseconds before the game ends
 
 
 //   $(function(){

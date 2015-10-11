@@ -12,6 +12,7 @@ window.onload = function(){
   $("#start").on("click", updateTimer);
   $('.answers').on("click", '.answer', chooseAnswer);
   $("li").on("click", getEquation);
+  $("#newgame").on("click", newGame);
 
   function chooseAnswer(){
     var answer = $(this).text();
@@ -28,7 +29,7 @@ window.onload = function(){
     if ($(".correct").length === 16) {
       // Stop timer
       // Display score?
-      return  $('h1').html("Win!");
+      return  $('ul').html("Win!");
     }
   }
 
@@ -98,17 +99,23 @@ window.onload = function(){
 
   function updateTimer(){
     play = true;
-    var counter = 10;
+    var counter = 5;
 
     setInterval(function(){
       counter --;
       if(counter >= 0){
         return timer.html(counter);
       } else {
-        return $('h1').html("GAME OVER!")
+        return $('ul').html("GAME OVER!")
         play = false;
         // Clear all squares and everything else!
       }
     }, 1000);
+  }
+
+  function newGame(){
+    res = 0;
+    play = false;
+    $("li").html = "";
   }
 }

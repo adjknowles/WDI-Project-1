@@ -76,3 +76,25 @@ button {
   font-family: monospace;
   font-weight: bold;
 }
+
+#newgame {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.guessing {
+  background: yellow;
+}
+
+.correct {
+  background: green;
+}
+
+#timer {
+  font-size: 40px;
+}

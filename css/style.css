@@ -1,6 +1,12 @@
+@font-face {
+  font-family: ringbearer;
+  src: url(../fonts/ringbearer/RINGM___.TTF);
+}
+
 body {
   text-align: center;
-  font-family: Arial, Helvetica, san-serif;
+  font-family: ringbearer;
+  background-color: #1BE7FF;
 }
 
 h1 {
@@ -17,6 +23,7 @@ font-size: 60px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
+  background-color: #FF5714;
 }
 
 .grid li {
@@ -29,7 +36,7 @@ font-size: 60px;
 }
 
 li:hover {
-  background: blue;
+  background: #E8AA14;
 }
 
 #display {
@@ -59,51 +66,50 @@ li:hover {
 }
 
 button {
-  background: black;
+  background: #000000;
+  border: 10px solid #474747;
   color: white;
-  border: none;
+/*  border: none;*/
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
+  border-radius: 100%;
 }
 
 #start {
-  background: green;
   color: white;
-  border: none;
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
+  font-family: ringbearer;
 }
 
 #newgame {
-  background: green;
   color: white;
-  border: none;
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
+  font-family: ringbearer;
 }
 
 #instructions {
-  background: green;
   color: white;
-  border: none;
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
+  font-family: ringbearer;
 }
 
 .guessing {
-  background: yellow;
+  background: #E4FF1A;
 }
 
 .correct {
-  background: green;
+  background: #6EEB83;
 }
 
 #timer {

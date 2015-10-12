@@ -111,19 +111,21 @@ window.onload = function(){
       '</button>' + '<button class="answer">'+parseFloat(myArray[2].toFixed(2))+'</button>');
   }
 
+
+
   function updateTimer(){
-    play = true;
     var counter = 30;
+    play = true;
 
     $("#instruct").hide();
 
-    var A = setInterval(function(){
+    A = setInterval(function(){
       counter --;
       if(counter >= 0){
         return timer.html(counter);
       } else {
         $("#question").hide();
-        $("#timer").hide();
+        timer.hide();
         $(".grid").hide();
         return $('#score').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
@@ -133,6 +135,8 @@ window.onload = function(){
   }
 
   function newGame(){
+    setTimeout(location.reload(true), 5000)
+    playerScore = 0
     res = 0;
     play = false;
     var $lis = $("li")

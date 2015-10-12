@@ -39,32 +39,6 @@ li:hover {
   background: #E8AA14;
 }
 
-#display {
-  margin: 0 auto;
-  height: 50px;
-  background: yellow;
-  text-align: center;
-  line-height: 50px;
-  color: #000;
-  width: 400px;
-  border: 1px solid #000;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.display2 {
-  margin: 0 auto;
-  height: 50px;
-  background: lime;
-  text-align: center;
-  line-height: 50px;
-  color: white;
-  width: 400px;
-  border: 1px solid #000;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 button {
   background: #000000;
   border: 10px solid #474747;

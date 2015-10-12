@@ -1,11 +1,11 @@
 window.onload = function(){
 
-  var question = $("#question");
-  var answer1 = $("#answer1");
-  var answer2 = $("#answer2");
-  var answer3 = $("#answer3");
-  var timer = $("#timer");
-  var start = $("#start");
+  var question    = $("#question");
+  var answer1     = $("#answer1");
+  var answer2     = $("#answer2");
+  var answer3     = $("#answer3");
+  var timer       = $("#timer");
+  var start       = $("#start");
   var res;
   var play;
   var playerScore = 0;
@@ -24,7 +24,6 @@ window.onload = function(){
   function chooseAnswer(){
     var answer = $(this).text();
 
-    // Remove buttons
     $(".answers").html("")
 
     if (answer.toString() === res.toString()) {
@@ -39,7 +38,6 @@ window.onload = function(){
       clearInterval(A);
       $("#question").hide();
       $(".grid").hide();
-      // Stop timer
       return  $('#score').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
     }
   }
@@ -47,12 +45,9 @@ window.onload = function(){
   function generateRandomAnswer(correct){
     var answer; 
     if (Math.random() > 0.5) {
-      // answer = (correct - 5);
       answer = Math.floor(correct - (Math.random()*10));
     } else {
-      // answer = (correct + 3);
       answer = Math.floor(correct + (Math.random()*10));
-      // answer = Math.floor(correct + (Math.random()*(correct/Math.random() * 2)));
     }
     if (correct === answer) return false;
     return answer;
@@ -111,8 +106,6 @@ window.onload = function(){
       '</button>' + '<button class="answer">'+parseFloat(myArray[2].toFixed(2))+'</button>');
   }
 
-
-
   function updateTimer(){
     var counter = 30;
     play = true;
@@ -129,7 +122,6 @@ window.onload = function(){
         $(".grid").hide();
         return $('#score').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
-        // Clear all squares and everything else!
       }
     }, 1000);
   }

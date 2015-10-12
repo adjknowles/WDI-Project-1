@@ -8,6 +8,8 @@ window.onload = function(){
   var start = $("#start");
   var res;
   var play;
+  var playerScore = 0;
+  var A;
 
   $("#start").on("click", updateTimer);
   $('.answers').on("click", '.answer', chooseAnswer);
@@ -22,14 +24,16 @@ window.onload = function(){
 
     if (answer.toString() === res.toString()) {
       $(".guessing").removeClass("guessing").addClass("correct");
+      playerScore++;
     } else {
       $(".guessing").removeClass("guessing");
     };
 
     if ($(".correct").length === 16) {
+      clearInterval(A);
+      $("#question").hide();
       // Stop timer
-      // Display score?
-      return  $('ul').html("Win!");
+      return  $('ul').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
     }
   }
 
@@ -99,14 +103,15 @@ window.onload = function(){
 
   function updateTimer(){
     play = true;
-    var counter = 5;
+    var counter = 30;
 
-    setInterval(function(){
+    var A = setInterval(function(){
       counter --;
       if(counter >= 0){
         return timer.html(counter);
       } else {
-        return $('ul').html("GAME OVER!")
+        $("#question").hide();
+        return $('ul').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
         // Clear all squares and everything else!
       }

@@ -11,6 +11,7 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 50px;
 }
 
 ul {
@@ -24,6 +25,7 @@ font-size: 60px;
   padding: 0;
   overflow: hidden;
   background-color: #FF5714;
+  border-radius: 15px;
 }
 
 .grid li {
@@ -41,20 +43,20 @@ li:hover {
 
 button {
   background: #000000;
-  border: 10px solid #474747;
+  border: 5px solid #474747;
   color: white;
 /*  border: none;*/
   padding: 10px 15px;
   font-size: 1.2em;
   font-family: monospace;
   font-weight: bold;
-  border-radius: 100%;
+  border-radius: 10%;
 }
 
 #start {
   color: white;
   padding: 10px 15px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: monospace;
   font-weight: bold;
   font-family: ringbearer;
@@ -63,7 +65,7 @@ button {
 #newgame {
   color: white;
   padding: 10px 15px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: monospace;
   font-weight: bold;
   font-family: ringbearer;
@@ -72,10 +74,14 @@ button {
 #instructions {
   color: white;
   padding: 10px 15px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: monospace;
   font-weight: bold;
   font-family: ringbearer;
+}
+
+#question {
+  font-size: 40px;
 }
 
 .guessing {
@@ -87,5 +93,5 @@ button {
 }
 
 #timer {
-  font-size: 40px;
+  font-size: 50px;
 }

@@ -20,9 +20,6 @@ window.onload = function(){
   function getInstructions(){
     $('#instruct').html("Click start to begin." + "<br/>" + "Select a square and pick the correct answer below." + "<br/>" + "Then move on to another square." + "<br/>" + "Answer as many squares as you can in 1 minute.");
   }
-  // $('#instructions').click(function(){
-  //     $("ul").hide();
-  // }
 
   function chooseAnswer(){
     var answer = $(this).text();
@@ -33,6 +30,7 @@ window.onload = function(){
     if (answer.toString() === res.toString()) {
       $(".guessing").removeClass("guessing").addClass("correct");
       playerScore++;
+      question.html("")
     } else {
       $(".guessing").removeClass("guessing");
     };
@@ -40,17 +38,21 @@ window.onload = function(){
     if ($(".correct").length === 5) {
       clearInterval(A);
       $("#question").hide();
+      $(".grid").hide();
       // Stop timer
-      return  $('ul').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
+      return  $('#score').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
     }
   }
 
   function generateRandomAnswer(correct){
     var answer; 
     if (Math.random() > 0.5) {
-      answer = Math.floor(correct - (Math.random()*(correct/Math.random() * 10)));
+      // answer = (correct - 5);
+      answer = Math.floor(correct - (Math.random()*10));
     } else {
-      answer = Math.floor(correct + (Math.random()*(correct/Math.random() * 10)));
+      // answer = (correct + 3);
+      answer = Math.floor(correct + (Math.random()*10));
+      // answer = Math.floor(correct + (Math.random()*(correct/Math.random() * 2)));
     }
     if (correct === answer) return false;
     return answer;
@@ -122,7 +124,8 @@ window.onload = function(){
       } else {
         $("#question").hide();
         $("#timer").hide();
-        return $('ul').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
+        $(".grid").hide();
+        return $('#score').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
         // Clear all squares and everything else!
       }
@@ -132,6 +135,12 @@ window.onload = function(){
   function newGame(){
     res = 0;
     play = false;
-    $("li").html = "";
+    var $lis = $("li")
+    $.each($lis, function(index, li){
+      $(li).removeClass("correct");
+    });
+    $(".grid").show();
+    $('#score').html("");
+    updateTimer();
   }
 }

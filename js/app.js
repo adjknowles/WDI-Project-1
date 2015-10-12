@@ -12,9 +12,17 @@ window.onload = function(){
   var A;
 
   $("#start").on("click", updateTimer);
+  $("#instructions").on("click", getInstructions);
   $('.answers').on("click", '.answer', chooseAnswer);
   $("li").on("click", getEquation);
   $("#newgame").on("click", newGame);
+
+  function getInstructions(){
+    $('#instruct').html("Click start to begin." + "<br/>" + "Select a square and pick the correct answer below." + "<br/>" + "Then move on to another square." + "<br/>" + "Answer as many squares as you can in 1 minute.");
+  }
+  // $('#instructions').click(function(){
+  //     $("ul").hide();
+  // }
 
   function chooseAnswer(){
     var answer = $(this).text();
@@ -29,7 +37,7 @@ window.onload = function(){
       $(".guessing").removeClass("guessing");
     };
 
-    if ($(".correct").length === 16) {
+    if ($(".correct").length === 5) {
       clearInterval(A);
       $("#question").hide();
       // Stop timer
@@ -96,14 +104,16 @@ window.onload = function(){
     var myArray = answers;
     shuffleAnswers(myArray);
 
-    $(".answers").append('<button class="answer">'+parseFloat(myArray[0].toFixed(2))+'</button>');
-    $(".answers").append('<button class="answer">'+parseFloat(myArray[1].toFixed(2))+'</button>');
-    $(".answers").append('<button class="answer">'+parseFloat(myArray[2].toFixed(2))+'</button>');
+    $(".answers").html('<button class="answer">'+parseFloat(myArray[0].toFixed(2))+
+      '</button>' + '<button class="answer">'+parseFloat(myArray[1].toFixed(2))+
+      '</button>' + '<button class="answer">'+parseFloat(myArray[2].toFixed(2))+'</button>');
   }
 
   function updateTimer(){
     play = true;
     var counter = 30;
+
+    $("#instruct").hide();
 
     var A = setInterval(function(){
       counter --;
@@ -111,6 +121,7 @@ window.onload = function(){
         return timer.html(counter);
       } else {
         $("#question").hide();
+        $("#timer").hide();
         return $('ul').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
         // Clear all squares and everything else!

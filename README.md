@@ -1,29 +1,62 @@
 # WDI-Project-1
 
-// First Project
+First Project
 
-// Game
+Game
 
-// Math Quiz Grid
+Gridlocked
 
-// This is a 1 player game.
+This is a 1 player game.
 
-// On the page
-// - title
-// - display 1 - to display who has won
-// - 4 x 4 grid (could potentially be more)
-// - display 2 - displays the question
-// - 3 answer buttons - player selects answer 
-// - a button to restart play after game ends
-// - a timer
+On the page:
 
-// Game play
-// - the player will click on a tile and the question will appear in the display.
-// - the player will then be able to pick 1 of 3 options by clicking the relevant button
-// - if the player enters the correct answer, the tile will appear and a message will appear in the display 1, and the next player will take their turn.
-// - if the player enters the incorrect answer, a message will appear in the display 1, and the player can try again/do another tile.
-// - the game ends when the timer runs out.
-// - the object of the game is to get as many tiles as possible.
-// - at the end of game play a button will be displayed to restart play.
+- title
+- 3 buttons - start, instructions & new game
+- timer
+- 4 x 4
+- question display
+- 3 answer buttons, which appear when player selects a square
 
+Game play:
 
+- the player can click on the instructions button to reveal game instructions.
+- they then click start to begin the game.
+- the player will click on a square and the question will appear in the display below the grid.
+- the square will change colour to show it has been selected.
+- the player will then be able to pick 1 of 3 options by clicking the relevant button
+- if the player enters the correct answer, the square will change colour and the player can move on to another square.
+- if the player enters the incorrect answer, the square will go back to the original colour and the player can try again/do another square.
+- the game ends when the timer runs out. The score will be displayed.
+- if the player correctly answers all 16 squares within the 1 minute, the game will end and the timer will stop and score will be displayed.
+- the object of the game is to get as many squares as possible.
+- at the end of game play the new game button can be clicked to begin a new game.
+
+Technologies used:
+
+- in this project I have used HTML, CSS, Javascript and JQuery.
+
+Approach taken:
+
+- I began by setting up all the files and directories.
+- I then created a basic HTML structure, to which I added some simple CSS styling, so as to create something simple to look at within the browser.
+- I then concentrated on the javascript.
+- I initially wrote my code in javascript, but later changed much of it to JQuery.
+- First I created all the event listeners and global variables.
+- I then built functions around these to create the game play.
+- Once this was all done, I went back to the CSS styling to perfect the layout of the game.
+
+Functions used:
+
+- getInstructions
+- updateTimer
+- getEquation
+- generateRandomAnswer
+- shuffleAnswers
+- chooseAnswer
+- newGame
+
+If I had more time:
+
+- I would have created 3 levels of game play of differing degrees of difficulty.
+- I would have added some transitions to create smoother game play.
+- Added some animations

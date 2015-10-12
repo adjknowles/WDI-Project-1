@@ -34,7 +34,7 @@ window.onload = function(){
       $(".guessing").removeClass("guessing");
     };
 
-    if ($(".correct").length === 5) {
+    if ($(".correct").length === 16) {
       clearInterval(A);
       $("#question").hide();
       $(".grid").hide();
@@ -107,7 +107,7 @@ window.onload = function(){
   }
 
   function updateTimer(){
-    var counter = 30;
+    var counter = 60;
     play = true;
 
     $("#instruct").hide();

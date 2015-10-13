@@ -35,7 +35,7 @@ window.onload = function(){
       $(".guessing").removeClass("guessing");
     };
 
-    if ($(".correct").length === 2) {
+    if ($(".correct").length === 16) {
       clearInterval(A);
       $("#question").hide();
       $(".grid").hide();
@@ -112,7 +112,7 @@ window.onload = function(){
   function updateTimer(){
     $('#start').removeClass("animated infinite pulse")
     $('#timer').addClass("animated infinite pulse")
-    var counter = 7;
+    var counter = 61;
     play = true;
 
     $("#instruct").hide();

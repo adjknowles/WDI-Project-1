@@ -21,19 +21,19 @@ Game play:
 
 - the player can click on the instructions button to reveal game instructions.
 - they then click start to begin the game.
-- the player will click on a square and the question will appear in the display below the grid.
+- the player will click on a square and the question will appear in the display to the side of the grid.
 - the square will change colour to show it has been selected.
 - the player will then be able to pick 1 of 3 options by clicking the relevant button
 - if the player enters the correct answer, the square will change colour and the player can move on to another square.
 - if the player enters the incorrect answer, the square will go back to the original colour and the player can try again/do another square.
 - the game ends when the timer runs out. The score will be displayed.
 - if the player correctly answers all 16 squares within the 30 seconds, the game will end and the timer will stop and score will be displayed.
-- the object of the game is to get as many squares as possible.
+- the object of the game is to get as many questions correct as possible, turning all the squares a different colour.
 - at the end of game play the new game button can be clicked to begin a new game.
 
 Technologies used:
 
-- in this project I have used HTML, CSS, Javascript and JQuery.
+- In this project I have used HTML, CSS, Javascript and JQuery.
 
 Approach taken:
 

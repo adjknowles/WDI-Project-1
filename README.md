@@ -27,7 +27,7 @@ Game play:
 - if the player enters the correct answer, the square will change colour and the player can move on to another square.
 - if the player enters the incorrect answer, the square will go back to the original colour and the player can try again/do another square.
 - the game ends when the timer runs out. The score will be displayed.
-- if the player correctly answers all 16 squares within the 1 minute, the game will end and the timer will stop and score will be displayed.
+- if the player correctly answers all 16 squares within the 30 seconds, the game will end and the timer will stop and score will be displayed.
 - the object of the game is to get as many squares as possible.
 - at the end of game play the new game button can be clicked to begin a new game.
 

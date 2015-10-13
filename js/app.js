@@ -112,7 +112,7 @@ window.onload = function(){
   function updateTimer(){
     $('#start').removeClass("animated infinite pulse")
     $('#timer').addClass("animated infinite pulse")
-    var counter = 61;
+    var counter = 31;
     play = true;
 
     $("#instruct").hide();

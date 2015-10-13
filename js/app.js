@@ -69,8 +69,8 @@ window.onload = function(){
 
     var operators = ['+','-','*','/'];
 
-    rnum1 = Math.floor((Math.random()*20)+1)
-    rnum2 = Math.floor((Math.random()*10)+1)
+    rnum1 = Math.ceil((Math.random()*20)+1)
+    rnum2 = Math.ceil((Math.random()*10)+1)
     op = operators[Math.floor(Math.random()*4)];
 
     switch (op) {

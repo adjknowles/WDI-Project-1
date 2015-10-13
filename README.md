@@ -37,7 +37,9 @@ Technologies used:
 
 Approach taken:
 
-- I began by setting up all the files and directories.
+- Created a Trello board outlining what needed to be done, and depending on their importance, the order in which they needed to be executed.
+- I then created all the files and directories within my project folder.
+- Wrote pseudo code.
 - I then created a basic HTML structure, to which I added some simple CSS styling, so as to create something simple to look at within the browser.
 - I then concentrated on the javascript.
 - I initially wrote my code in javascript, but later changed much of it to JQuery.
@@ -58,5 +60,5 @@ Functions used:
 If I had more time:
 
 - I would have created 3 levels of game play of differing degrees of difficulty.
-- I would have added some transitions to create smoother game play.
-- Added some animations
+- Create a high score feature that updates when the player scores higher than the previous turn.
+- Add sound.

@@ -17,8 +17,12 @@ window.onload = function(){
   $("li").on("click", getEquation);
   $("#newgame").on("click", newGame);
 
+  // function getInstructions(){
+  //   $('#instruct').html("Click start to begin." + "<br/>" + "Select a square and pick the correct answer below." + "<br/>" + "Then move on to another square." + "<br/>" + "Answer as many squares as you can in 1 minute.");
+  // }
+
   function getInstructions(){
-    $('#instruct').html("Click start to begin." + "<br/>" + "Select a square and pick the correct answer below." + "<br/>" + "Then move on to another square." + "<br/>" + "Answer as many squares as you can in 1 minute.");
+    $('#instruct').toggle();
   }
 
   function chooseAnswer(){
@@ -38,7 +42,8 @@ window.onload = function(){
       clearInterval(A);
       $("#question").hide();
       $(".grid").hide();
-      return  $('#score').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
+      $('#timer').removeClass("animated infinite pulse")
+      return  $('.game-over').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
     }
   }
 
@@ -87,8 +92,8 @@ window.onload = function(){
     
     res = parseFloat(res.toFixed(2));
 
-    result.innerHTML = res;
-    question.html("What is " + rnum1 + " " + op + " " + rnum2 + " ?");
+    // result.innerHTML = res;
+    question.html("<span id='what-is'>What is:</span><br> " + rnum1 + " " + op + " " + rnum2 + " ?");
 
     var answers = [res];
     while (answers.length < 3) {
@@ -107,7 +112,9 @@ window.onload = function(){
   }
 
   function updateTimer(){
-    var counter = 60;
+    $('#start').removeClass("animated infinite pulse")
+    $('#timer').addClass("animated infinite pulse")
+    var counter = 61;
     play = true;
 
     $("#instruct").hide();
@@ -118,9 +125,11 @@ window.onload = function(){
         return timer.html(counter);
       } else {
         $("#question").hide();
-        timer.hide();
+        $(".answers").hide();
+        $('#timer').removeClass("animated infinite pulse")
+        timer.html("0");
         $(".grid").hide();
-        return $('#score').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
+        return $('.game-over').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
       }
     }, 1000);
@@ -128,15 +137,15 @@ window.onload = function(){
 
   function newGame(){
     setTimeout(location.reload(true), 5000)
-    playerScore = 0
-    res = 0;
-    play = false;
-    var $lis = $("li")
-    $.each($lis, function(index, li){
-      $(li).removeClass("correct");
-    });
-    $(".grid").show();
-    $('#score').html("");
-    updateTimer();
+    // playerScore = 0
+    // res = 0;
+    // play = false;
+    // var $lis = $("li")
+    // $.each($lis, function(index, li){
+    //   $(li).removeClass("correct");
+    // });
+    // $(".grid").show();
+    // $('#score').html("");
+    // updateTimer();
   }
 }

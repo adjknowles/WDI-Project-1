@@ -1,24 +1,49 @@
-@font-face {
-  font-family: ringbearer;
-  src: url(../fonts/ringbearer/RINGM___.TTF);
-}
-
 body {
   text-align: center;
-  font-family: ringbearer;
-  background-color: #D2D7DF;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #F7F5FB;
+  width: 1000px;
+  margin: 0 auto;
+  color: #5A6282;
+}
+
+main {
+  width: 600px;
+  float: left;
+}
+
+.answer-box {
+  width: 200px;
+  float: left;
+  margin-top: 230px;
+}
+
+#timer {
+  width: 200px;
+  float: left;
+  margin-top: 360px;
+  font-size: 90px;
 }
 
 h1 {
+  display: inline-block;
   text-align: center;
-  font-size: 50px;
-  color: #353535;
+  font-size: 70px;
+  color: #5A6282;
+  margin: 20px 0;
+}
+
+.buttons {
+  clear: both;
+}
+
+#locked {
+  font-weight: 400;
 }
 
 ul {
 list-style-type: none;
 font-size: 60px;
-/*background-color: #8A897C;*/
 }
 
 .grid {
@@ -26,9 +51,10 @@ font-size: 60px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  background-color: #8A897C;
+  background-color: #909CC2;
   border-radius: 15px;
-  border: 5px solid #8A897C;
+  border: 5px solid #909CC2;
+  margin-top: 20px;
 }
 
 .grid li {
@@ -37,73 +63,85 @@ font-size: 60px;
   float: left;
   margin: 0;
   padding: 0;
-  border: 5px solid #8A897C;
+  border: 5px solid #909CC2;
   border-radius: 15px;
-  background-color: #BDBBB0;
+  background-color: #E8EBF7;
 }
 
 li:hover {
-  background: #E8AA14;
+  background: #D0D6EF;
 }
 
 button {
-  background: #8A897C;
-  border: 2px solid #BDBBB0;
-  color: white;
-/*  border: none;*/
+  background: white;
+  border: 4px solid #909CC2;
+  color: #909CC2;
   padding: 10px 15px;
   font-size: 1.2em;
-  font-family: monospace;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  border-radius: 10%;
+  border-radius: 15px;
 }
 
+.blue:hover {
+  border: 4px solid #76E5FC;
+  color: #76E5FC;
+}
+
+button:focus {outline:0;}
+
 #start {
-  color: #FFFFFF;
   padding: 10px 15px;
   font-size: 1em;
-  font-family: monospace;
-  font-weight: bold;
-  font-family: ringbearer;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #newgame {
-  color: #FFFFFF;
   padding: 10px 15px;
   font-size: 1em;
-  font-family: monospace;
-  font-weight: bold;
-  font-family: ringbearer;
 }
 
 #instructions {
-  color: #FFFFFF;
   padding: 10px 15px;
   font-size: 1em;
-  font-family: monospace;
+}
+
+#instruct {
+  margin-top: 20px;
+  display: none;
+}
+
+.game-over {
+  font-size: 20px;
   font-weight: bold;
-  font-family: ringbearer;
+  margin-top: 20px;
+}
+
+#what-is {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #question {
   font-size: 40px;
-  color: #353535;
   padding: 10px;
 }
 
 .guessing {
-  background: green !important;
+  background: #FF0D83 !important;
 }
 
-.answers {
-  margin: 10px;
+.answer {
+  display: block;
+  margin: 5px auto;
+  width: 75px;
+}
+
+.answer:hover {
+  border: 4px solid #FF0D83;
+  color: #FF0D83;
 }
 
 .correct {
-  background: red !important;
-}
-
-#timer {
-  font-size: 50px;
-  color: #353535;
+  background: #76E5FC !important;
 }

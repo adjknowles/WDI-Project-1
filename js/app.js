@@ -17,9 +17,6 @@ window.onload = function(){
   $("li").on("click", getEquation);
   $("#newgame").on("click", newGame);
 
-  // function getInstructions(){
-  //   $('#instruct').html("Click start to begin." + "<br/>" + "Select a square and pick the correct answer below." + "<br/>" + "Then move on to another square." + "<br/>" + "Answer as many squares as you can in 1 minute.");
-  // }
 
   function getInstructions(){
     $('#instruct').toggle();
@@ -38,12 +35,13 @@ window.onload = function(){
       $(".guessing").removeClass("guessing");
     };
 
-    if ($(".correct").length === 16) {
+    if ($(".correct").length === 2) {
       clearInterval(A);
       $("#question").hide();
       $(".grid").hide();
       $('#timer').removeClass("animated infinite pulse")
-      return  $('.game-over').html("Well Done!" + "<br/>" + "You Scored The Maximum " + playerScore + " Points!");
+      $('#newgame').addClass("animated infinite pulse")
+      return  $('.game-over').html("Well Done!" + "<br/>" + "You Scored The Maximum " + "<br/>" + playerScore + " Points!");
     }
   }
 
@@ -114,7 +112,7 @@ window.onload = function(){
   function updateTimer(){
     $('#start').removeClass("animated infinite pulse")
     $('#timer').addClass("animated infinite pulse")
-    var counter = 61;
+    var counter = 7;
     play = true;
 
     $("#instruct").hide();
@@ -129,6 +127,7 @@ window.onload = function(){
         $('#timer').removeClass("animated infinite pulse")
         timer.html("0");
         $(".grid").hide();
+        $('#newgame').addClass("animated infinite pulse")
         return $('.game-over').html("GAME OVER!" + "<br/>" + "You Scored " + playerScore + " Points");
         play = false;
       }

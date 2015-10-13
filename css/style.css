@@ -112,9 +112,9 @@ button:focus {outline:0;}
 }
 
 .game-over {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 #what-is {

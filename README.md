@@ -38,7 +38,7 @@ Technologies used:
 Approach taken:
 
 - Created a Trello board outlining what needed to be done, and depending on their importance, the order in which they needed to be executed.
-- I then created all the files and directories within my project folder.
+- I then created all the (empty) files and directories within my project folder.
 - Wrote pseudo code.
 - I then created a basic HTML structure, to which I added some simple CSS styling, so as to create something simple to look at within the browser.
 - I then concentrated on the javascript.
@@ -62,3 +62,14 @@ If I had more time:
 - I would have created 3 levels of game play of differing degrees of difficulty.
 - Create a high score feature that updates when the player scores higher than the previous turn.
 - Add sound.
+- Refacter the code - make it dryer.
+
+Initial ideas:
+
+- Originally I was going to do a picture quiz based on a theme. But I then realised that once you have played it once, you're probably going to remember the answers if you play it again. 
+- So then came the idea of a mathamatical quiz, where the questions are completely random and two of the answers are also random. This means that you can play as many times as you like.
+
+Challenges:
+
+- I found creating the timer function very challenging. Even more so was getting the timer to stop if the player answered all 16 questions correctly.
+- Generating random answers that were close to the correct answer was also a challenge. It took quite a bit of playing around with the formulas to get it to what it is now. It's still not perfect of course!

@@ -8,7 +8,7 @@ Gridlocked
 
 This is a 1 player game.
 
-On the page:
+##On the page:
 
 - title
 - 3 buttons - start, instructions & new game
@@ -17,7 +17,11 @@ On the page:
 - question display
 - 3 answer buttons, which appear when player selects a square
 
-Game play:
+![Main](./images/image1.png)
+
+Before game play.
+
+##Game play:
 
 - the player can click on the instructions button to reveal game instructions.
 - they then click start to begin the game.
@@ -31,11 +35,19 @@ Game play:
 - the object of the game is to get as many questions correct as possible, turning all the squares a different colour.
 - at the end of game play the new game button can be clicked to begin a new game.
 
-Technologies used:
+![Gameplay](./images/image2.png)
+
+During game play.
+
+![Finish](./images/image3.png)
+
+After game completion.
+
+##Technologies used:
 
 - In this project I have used HTML, CSS, Javascript and JQuery.
 
-Approach taken:
+##Approach taken:
 
 - Created a Trello board outlining what needed to be done, and depending on their importance, the order in which they needed to be executed.
 - I then created all the (empty) files and directories within my project folder.
@@ -47,7 +59,7 @@ Approach taken:
 - I then built functions around these to create the game play.
 - Once this was all done, I went back to the CSS styling to perfect the layout of the game.
 
-Functions used:
+##Functions used:
 
 - getInstructions
 - updateTimer
@@ -57,19 +69,19 @@ Functions used:
 - chooseAnswer
 - newGame
 
-If I had more time:
+##If I had more time:
 
 - I would have created 3 levels of game play of differing degrees of difficulty.
 - Create a high score feature that updates when the player scores higher than the previous turn.
 - Add sound.
 - Refacter the code - make it dryer.
 
-Initial ideas:
+##Initial ideas:
 
 - Originally I was going to do a picture quiz based on a theme. But I then realised that once you have played it once, you're probably going to remember the answers if you play it again. 
 - So then came the idea of a mathamatical quiz, where the questions are completely random and two of the answers are also random. This means that you can play as many times as you like.
 
-Challenges:
+##Challenges:
 
 - I found creating the timer function very challenging. Even more so was getting the timer to stop if the player answered all 16 questions correctly.
 - Generating random answers that were close to the correct answer was also a challenge. It took quite a bit of playing around with the formulas to get it to what it is now. It's still not perfect of course!

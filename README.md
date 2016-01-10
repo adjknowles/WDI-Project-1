@@ -85,3 +85,4 @@ After game completion.
 
 - I found creating the timer function very challenging. Even more so was getting the timer to stop if the player answered all 16 questions correctly.
 - Generating random answers that were close to the correct answer was also a challenge. It took quite a bit of playing around with the formulas to get it to what it is now. It's still not perfect of course!
+- Advanced CSS. Even though I found the CSS styling hard, I really enjoyed bringing the game to life. I especially enjoyed using the Animate.css to make it even more exciting.
